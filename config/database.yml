@@ -1,0 +1,28 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV['DB_POOL'] || ENV['RAILS_MAX_THREADS'] || 5 %>
+
+production:
+  <<: *default
+  database: <%= ENV['PRODUCTION_DB_NAME'] %>
+  username: <%= ENV['PRODUCTION_DB_USERNAME'] %>
+  password: <%= ENV['PRODUCTION_DB_PASSWORD'] %>
+
+staging:
+  <<: *default
+  database: <%= ENV['STAGING_DB_NAME'] %>
+  username: <%= ENV['STAGING_DB_USERNAME'] %>
+  password: <%= ENV['STAGING_DB_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: <%= ENV['DEVELOPMENT_DB_NAME'] %>
+  username: <%= ENV['DEVELOPMENT_DB_USERNAME'] %>
+  password: <%= ENV['DEVELOPMENT_DB_PASSWORD'] %>
+
+test:
+  <<: *default
+  database: <%= ENV['TEST_DB_NAME'] %>
+  username: <%= ENV['TEST_DB_USERNAME'] %>
+  password: <%= ENV['TEST_DB_PASSWORD'] %>
