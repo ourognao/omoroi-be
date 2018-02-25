@@ -9,6 +9,9 @@ end
 
 # Mailcatcher - Catches mail and serves it through a dream (https://github.com/sj26/mailcatcher/)
 
+# Easiest way to add multi-environment yaml settings to Rails, Sinatra, Pandrino and other Ruby projects. (https://github.com/railsconfig/config)
+gem 'config'
+
 # Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff (https://github.com/svenfuchs/rails-i18n)
 gem 'rails-i18n'
 
@@ -47,6 +50,12 @@ gem 'rack-cors', require: 'rack/cors'
 
 # Ruby Timezone Library (https://github.com/tzinfo/tzinfo)
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Token based authentication for Rails JSON APIs. Designed to work with jToker and ng-token-auth. (https://github.com/lynndylanhurley/devise_token_auth)
+gem 'devise_token_auth'
+
+# OmniAuth is a flexible authentication system utilizing Rack middleware. (https://github.com/omniauth/omniauth)
+gem 'omniauth'
 
 group :development do
   # The Listen gem listens to file modifications and notifies you about the changes. (https://github.com/guard/listen)
