@@ -31,5 +31,30 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable,
           :confirmable, :omniauthable
+  
   include DeviseTokenAuth::Concerns::User
+  extend Enumerize
+
+  enumerize :kind, in: {
+    engineer:   1,
+    admin:      2,
+    staff:      3,
+    customer:   4
+  }, default: :customer
+
+  enumerize :status, in: {
+    active:   1,
+    inactive: 2,
+  }, default: :active
+
+  def debug
+    client_id = 'DEBUG'
+    token     = 'DEBUG'
+    tokens[client_id] = {
+      token: BCrypt::Password.create(token),
+      expiry: (Time.now + DeviseTokenAuth.token_lifespan).to_i
+    }
+    save
+    build_auth_header(token, client_id)
+  end
 end
