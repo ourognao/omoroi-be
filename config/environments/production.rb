@@ -52,11 +52,20 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "omoroi-be_#{Rails.env}"
+  ActionMailer::Base.smtp_settings = {
+    :address        => Settings.mailer.gmail_smtp,
+    :port           => Settings.mailer.gmail_port,
+    :authentication       => :plain,
+    :user_name      => Settings.mailer.gmail_username,
+    :password       => Settings.mailer.gmail_password,
+    :domain               => Settings.mailer.gmail_domain,
+    :enable_starttls_auto => true
+  }
   config.action_mailer.perform_caching = false
-
-  # Ignore bad email addresses and do not raise email delivery errors.
-  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_options = { from: Settings.mailer.gmail_no_reply }
+  config.action_mailer.delivery_method = :smtp
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

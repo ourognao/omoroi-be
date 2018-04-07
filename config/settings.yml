@@ -7,7 +7,15 @@ staging:
   api_host:  omoroi-be-staging.herokuapp.com
 
 development:
-  app_host:  192.168.1.6:3000
+  app_host:  192.168.1.9:3000
   api_host:  127.0.0.1:4000
   smtp_host: 127.0.0.1
   smtp_port: 1025
+
+mailer:
+  gmail_username: 'info@omoroilife.com'
+  gmail_password: 'omoroi2015'
+  gmail_smtp: 'smtp.gmail.com'
+  gmail_port: '587'
+  gmail_domain: 'gmail.com'
+  gmail_no_reply: 'no-reply@omoroilife.com'
