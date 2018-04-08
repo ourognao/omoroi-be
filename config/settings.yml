@@ -1,3 +1,8 @@
+company:
+  omoroi:
+    name: Omoroi
+  ip_address: 126.74.201.30
+
 production:
   app_host:  omoroi-fe.herokuapp.com
   api_host:  omoroi-be.herokuapp.com
