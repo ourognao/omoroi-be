@@ -109,8 +109,8 @@ def createEvents(maxEvents, isFuturEvents)
       end_time: endTime.sample,
       remaining: rand(1..15),
       capacity: rand(15..30),
-      threshold: rand(5..10)-
- -    section: 'SC',
+      threshold: rand(5..10)
+      section: 'SC',
       tags: [tag],
       positions: positionItems[0][town.to_sym],
       access: "#{rand(1..4)}-#{rand(5..10)}min walk from #{town}. #{stationItems.sample} or #{stationItems.sample} Station",
