@@ -1,0 +1,11 @@
+json.(user,
+  :id,
+  :name,
+  :email,
+  :kind,
+  :status,
+  :line,
+  :confirmed_at,
+  :created_at,
+  :updated_at
+)

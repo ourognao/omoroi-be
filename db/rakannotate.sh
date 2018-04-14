@@ -1,2 +1,2 @@
 rake db:migrate
-bundle exec annotate --position before
+bundle exec annotate -ik --position before

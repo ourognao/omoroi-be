@@ -25,6 +25,14 @@
 #  tokens                 :json
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  line                   :string
+#
+# Indexes
+#
+#  index_users_on_confirmation_token    (confirmation_token) UNIQUE
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_uid_and_provider      (uid,provider) UNIQUE
 #
 
 class User < ActiveRecord::Base
@@ -35,10 +43,12 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
   extend Enumerize
 
+  has_many :events
+
   enumerize :kind, in: {
     engineer:   1,
     admin:      2,
-    staff:      3,
+    organizer:  3,
     customer:   4
   }, default: :customer
 

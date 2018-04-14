@@ -9,6 +9,9 @@ end
 
 # Mailcatcher - Catches mail and serves it through a dream (https://github.com/sj26/mailcatcher/)
 
+# Sophisticated paginator for Ruby webapps (https://github.com/kaminari/kaminari)
+gem 'kaminari'
+
 # Easiest way to add multi-environment yaml settings to Rails, Sinatra, Pandrino and other Ruby projects. (https://github.com/railsconfig/config)
 gem 'config'
 

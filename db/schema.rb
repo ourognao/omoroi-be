@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180224122638) do
+ActiveRecord::Schema.define(version: 20180408095211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "title"
+    t.string "section"
+    t.string "location"
+    t.string "access"
+    t.date "date"
+    t.string "start_time"
+    t.string "end_time"
+    t.integer "cost"
+    t.integer "remaining"
+    t.integer "capacity"
+    t.integer "threshold"
+    t.string "picture"
+    t.text "explanation"
+    t.string "positions", array: true
+    t.string "tags", array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["date"], name: "index_events_on_date"
+    t.index ["section"], name: "index_events_on_section"
+    t.index ["tags"], name: "index_events_on_tags"
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
@@ -38,6 +63,7 @@ ActiveRecord::Schema.define(version: 20180224122638) do
     t.json "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "line"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

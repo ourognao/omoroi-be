@@ -12,7 +12,7 @@ staging:
   api_host:  omoroi-be-staging.herokuapp.com
 
 development:
-  app_host:  192.168.1.9:3000
+  app_host:  127.0.0.1:3000
   api_host:  127.0.0.1:4000
   smtp_host: 127.0.0.1
   smtp_port: 1025
