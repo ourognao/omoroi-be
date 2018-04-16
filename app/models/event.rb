@@ -31,6 +31,7 @@
 #
 
 class Event < ActiveRecord::Base
+  has_many :reservations
   belongs_to :user
 
   scope :sortedByAsc,  -> { all.sort_by { |event| event[:id] } }
