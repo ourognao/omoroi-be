@@ -44,6 +44,7 @@ class User < ActiveRecord::Base
   extend Enumerize
 
   has_many :events
+  has_many :reservations
 
   enumerize :kind, in: {
     engineer:   1,
