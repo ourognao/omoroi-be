@@ -22,7 +22,7 @@ class EventsController < ApplicationController
     
     @users      = User.all
     @events     = Event.where('date BETWEEN ? AND ?', startMonth, endMonth).sortedByAsc
-    @events    += Event.where('date < ?', currentDay).sortedByAsc.last(3) if params[:screen] == 'top'
+    @events    += Event.where('date < ?', currentDay).sortedByDesc.first(3) if params[:screen] == 'top'
   end
 
   def changeDateFormat(date)
