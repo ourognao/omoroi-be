@@ -4,8 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  user_id     :integer          not null
-#  title       :string
-#  section     :string
+#  title       :text
 #  location    :string
 #  access      :string
 #  date        :date
@@ -21,11 +20,11 @@
 #  tags        :string           is an Array
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  section     :string           is an Array
 #
 # Indexes
 #
 #  index_events_on_date     (date)
-#  index_events_on_section  (section)
 #  index_events_on_tags     (tags)
 #  index_events_on_user_id  (user_id)
 #

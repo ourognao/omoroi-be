@@ -60,8 +60,10 @@ User.create(
 
 def createEvents(maxEvents, isFuturEvents)
   for i in 0..maxEvents
-    tagsItems = ['volleyball', 'basketball', 'pingpong', 'futsal', 'badminton', 'kickboxing', 'other']
-    tag = tagsItems.sample
+    sectionItems = ['SC', 'LX', 'SP']
+    section = sectionItems.sample
+    sportTagsItems = ['volleyball', 'basketball', 'pingpong', 'futsal', 'badminton', 'kickboxing', 'other']
+    tag = section == 'SP' ? sportTagsItems.sample : nil
     locationItems = ['Sports Center', 'Gymnastic Club']
     townItems = ['Mishima', 'Toyono', 'Senboku', 'Sennan', 'Suita', 'Sakai', 'Takatsuki', 'Ikeda', 'Kaizuka']
     town = townItems.sample
@@ -100,9 +102,23 @@ def createEvents(maxEvents, isFuturEvents)
       '/images/top/carousel/7.jpg'
     ]
     
+    case section
+      when 'SC'
+        titleBySection = "Social Event #{i}"
+      when 'LX'
+        titleBySection = "Language Event #{i}"
+      when 'SP'
+        titleBySection = "#{tag} Tournament"
+    end
+
+    title = [{
+      section: section,
+      title: titleBySection
+    }]
+
     Event.create(
       picture: pictureItems.sample,
-      title: "#{tag} Tournament",
+      title: title.to_json,
       location: "#{town} #{locationItems.sample}",
       date: date.strftime('%Y-%m-%d'),
       start_time: startTime.sample,
@@ -110,7 +126,7 @@ def createEvents(maxEvents, isFuturEvents)
       remaining: rand(1..15),
       capacity: rand(15..30),
       threshold: rand(5..10),
-      section: 'SC',
+      section: [section],
       tags: [tag],
       positions: positionItems[0][town.to_sym],
       access: "#{rand(1..4)}-#{rand(5..10)}min walk from #{town}. #{stationItems.sample} or #{stationItems.sample} Station",
