@@ -123,7 +123,6 @@ def createEvents(maxEvents, isFuturEvents)
       date: date.strftime('%Y-%m-%d'),
       start_time: startTime.sample,
       end_time: endTime.sample,
-      remaining: rand(1..15),
       capacity: rand(15..30),
       threshold: rand(5..10),
       section: [section],

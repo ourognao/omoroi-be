@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180419143518) do
+ActiveRecord::Schema.define(version: 20180422075338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20180419143518) do
     t.string "start_time"
     t.string "end_time"
     t.integer "cost"
-    t.integer "remaining"
     t.integer "capacity"
     t.integer "threshold"
     t.string "picture"
