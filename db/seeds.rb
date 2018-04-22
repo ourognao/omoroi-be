@@ -62,7 +62,7 @@ def createEvents(maxEvents, isFuturEvents)
   for i in 0..maxEvents
     sectionItems = ['SC', 'LX', 'SP']
     section = sectionItems.sample
-    sportTagsItems = ['volleyball', 'basketball', 'pingpong', 'futsal', 'badminton', 'kickboxing', 'other']
+    sportTagsItems = ['volleyball', 'basketball', 'pingpong', 'futsal', 'badminton', 'kickboxing', 'tennis', 'other']
     tag = section == 'SP' ? sportTagsItems.sample : nil
     locationItems = ['Sports Center', 'Gymnastic Club']
     townItems = ['Mishima', 'Toyono', 'Senboku', 'Sennan', 'Suita', 'Sakai', 'Takatsuki', 'Ikeda', 'Kaizuka']
