@@ -11,7 +11,6 @@
 #  start_time  :string
 #  end_time    :string
 #  cost        :integer
-#  remaining   :integer
 #  capacity    :integer
 #  threshold   :integer
 #  picture     :string
