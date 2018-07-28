@@ -3,9 +3,9 @@ class PicturesController < ApplicationController
 
   def upload
     return if params[:uploadFileObj].blank?
-
-    if @pictureType == 'event'
-      @picture = EventPicture.new(event_id: @id)
+    
+    if @pictureType == :event
+      @picture = EventPicture.new
       @picture.uploaded_file = params[:uploadFileObj]
       @picture.save
     end
@@ -20,6 +20,6 @@ class PicturesController < ApplicationController
   
   def set_picture_type
     fileTypeExts = params[:fileTypeExts].split(",")
-    @pictureType, @id = fileTypeExts.pop(2)
+    @pictureType = fileTypeExts.pop(1).first.to_sym
   end
 end

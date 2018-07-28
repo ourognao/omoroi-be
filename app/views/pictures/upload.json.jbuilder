@@ -1,5 +1,5 @@
 case @pictureType
-  when 'event'
+  when :event
     if @picture.errors.any?
       json.status :error
       json.error @error
