@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   resources :users,         only: [:index, :show,   :update, :destroy], defaults: { format: :json }
   resources :events,        only: [:index, :show,   :update, :destroy], defaults: { format: :json }
   resources :reservations,  only: [:index, :create, :update, :destroy], defaults: { format: :json }
+  
+  namespace :pictures, defaults: { format: :json } do
+    post 'upload'
+    post 'delete'
+  end
 end
