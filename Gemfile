@@ -9,6 +9,9 @@ end
 
 # Mailcatcher - Catches mail and serves it through a dream (https://github.com/sj26/mailcatcher/)
 
+# Manage Procfile-based applications (https://github.com/ddollar/foreman)
+gem 'foreman'
+
 # Sophisticated paginator for Ruby webapps (https://github.com/kaminari/kaminari)
 gem 'kaminari'
 
