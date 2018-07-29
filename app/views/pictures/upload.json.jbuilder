@@ -6,6 +6,6 @@ case @pictureType
     else
       json.status :success
       json.success :true
-      json.id @picture.id
+      json.qquuid @picture.qquuid
     end
 end

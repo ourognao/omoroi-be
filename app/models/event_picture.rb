@@ -9,6 +9,7 @@
 #  data         :binary
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  qquuid       :string
 #
 
 class EventPicture < ApplicationRecord

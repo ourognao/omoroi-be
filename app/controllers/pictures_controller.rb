@@ -5,7 +5,7 @@ class PicturesController < ApplicationController
     return if params[:uploadFileObj].blank?
     
     if @pictureType == :event
-      @picture = EventPicture.new
+      @picture = EventPicture.new(qquuid: params[:qquuid])
       @picture.uploaded_file = params[:uploadFileObj]
       @picture.save
     end
@@ -14,6 +14,10 @@ class PicturesController < ApplicationController
   def show
     @picture = EventPicture.find(params[:id])
     send_data @picture.data, :filename => @picture.filename, :type => @picture.content_type
+  end
+
+  def delete
+    @picture = EventPicture.find_by(qquuid: params[:qquuid]).destroy
   end
 
   private
