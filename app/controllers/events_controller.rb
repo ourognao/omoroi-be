@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-  before_action :set_events, only: [:index]
+  before_action :set_event,   only: [:update, :destroy]
+  before_action :set_events,  only: [:index]
   
   def index
   end
@@ -13,7 +14,40 @@ class EventsController < ApplicationController
   def destroy
   end
 
+  def create
+    @event = Event.new(event_params)
+    @event.save!
+    params[:event][:picture_ids].each do |qquuid|
+      EventPicture.find_by(qquuid: qquuid).update(event_id: @event.id)
+    end
+  end
+
   private
+
+  def event_params
+    params.require(:event).permit(
+      :id,
+      :user_id,
+      :title,
+      :date,
+      :location,
+      :access,
+      :start_time,
+      :end_time,
+      :cost,
+      :capacity,
+      :threshold,
+      :explanation,
+      :picture_ids => [],
+      :positions => [],
+      :tags => [],
+      :section => []
+    )
+  end
+
+  def set_event
+    @event = Event.find(params[:id]) if params[:id].present?
+  end
 
   def set_events
     startMonth  = Date.parse(changeDateFormat(params[:bom]))
