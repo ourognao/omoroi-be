@@ -15,7 +15,6 @@ class PicturesController < ApplicationController
     if params[:picture_type].to_sym == :event
       @pictures = EventPicture.where(event_id: params[:id])
     end
-    # send_data @picture.data, :filename => @picture.filename, :type => @picture.content_type
   end
 
   def delete
