@@ -91,16 +91,6 @@ def createEvents(maxEvents, isFuturEvents)
     
     currentDate = Time.current.strftime('%Y-%m-%d').to_date
     date = isFuturEvents ? currentDate + i : currentDate - i  
-
-    pictureItems = [
-      '/images/top/carousel/1.jpg',
-      '/images/top/carousel/2.jpg',
-      '/images/top/carousel/3.jpg',
-      '/images/top/carousel/4.jpg',
-      '/images/top/carousel/5.jpg',
-      '/images/top/carousel/6.jpg',
-      '/images/top/carousel/7.jpg'
-    ]
     
     case section
       when 'SC'
@@ -117,7 +107,6 @@ def createEvents(maxEvents, isFuturEvents)
     }]
 
     Event.create(
-      picture: pictureItems.sample,
       title: title.to_json,
       location: "#{town} #{locationItems.sample}",
       date: date.strftime('%Y-%m-%d'),
@@ -138,6 +127,26 @@ end
 
 
 begin
-  createEvents(349, false)
-  createEvents(349, true)
+  createEvents(49, false)
+  createEvents(49, true)
 end
+
+
+# EventPicture.count
+# Event.count
+
+# 14.times {
+#   for i in 1..7 do
+#     dupPicture = EventPicture.find(i).dup
+#     dupPicture.save
+#   end 
+# }
+
+# Event.all.each_with_index do |event, index|
+#   i = index + 1
+#   EventPicture.find(i).update(event_id: i)
+# end
+
+# EventPicture.where(event_id: nil).count
+# ids = EventPicture.where(event_id: nil).pluck(:id)
+# EventPicture.where(id: ids).destroy_all
