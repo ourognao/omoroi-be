@@ -135,8 +135,8 @@ end
 # EventPicture.count
 # Event.count
 
-# 14.times {
-#   for i in 1..7 do
+# 7.times {
+#   for i in 1..14 do
 #     dupPicture = EventPicture.find(i).dup
 #     dupPicture.save
 #   end 
