@@ -9,6 +9,9 @@ end
 
 # Mailcatcher - Catches mail and serves it through a dream (https://github.com/sj26/mailcatcher/)
 
+# High-level image processing helper methods with libvips and ImageMagick/GraphicsMagick  (https://github.com/janko-m/image_processing)
+gem "image_processing", "~> 1.0"
+
 # Manage Procfile-based applications (https://github.com/ddollar/foreman)
 gem 'foreman'
 

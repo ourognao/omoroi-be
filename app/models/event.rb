@@ -13,7 +13,6 @@
 #  cost        :integer
 #  capacity    :integer
 #  threshold   :integer
-#  picture     :string
 #  explanation :text
 #  positions   :string           is an Array
 #  tags        :string           is an Array
@@ -30,7 +29,9 @@
 
 class Event < ActiveRecord::Base
   has_many :reservations
+  has_many :event_pictures
   belongs_to :user
+  
   attr_accessor :picture_ids
 
   scope :sortedByAsc,  -> { all.sort_by { |event| event[:id] } }
