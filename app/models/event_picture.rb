@@ -2,7 +2,7 @@
 #
 # Table name: event_pictures
 #
-#  id         :integer          not null, primary key
+#  id         :bigint(8)        not null, primary key
 #  event_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -10,6 +10,7 @@
 #  original   :text
 #  thumbnail  :text
 #
+
 require "image_processing/mini_magick"
 class EventPicture < ApplicationRecord
   belongs_to :event, optional: :true
