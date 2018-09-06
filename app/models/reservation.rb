@@ -2,7 +2,7 @@
 #
 # Table name: reservations
 #
-#  id              :integer          not null, primary key
+#  id              :bigint(8)        not null, primary key
 #  event_id        :integer          not null
 #  user_id         :integer          not null
 #  expected_people :integer
