@@ -9,6 +9,9 @@ end
 
 # Mailcatcher - Catches mail and serves it through a dream (https://github.com/sj26/mailcatcher/)
 
+# Complete Ruby geocoding solution (https://github.com/alexreisner/geocoder)
+gem 'geocoder'
+
 # High-level image processing helper methods with libvips and ImageMagick/GraphicsMagick  (https://github.com/janko-m/image_processing)
 gem "image_processing", "~> 1.0"
 

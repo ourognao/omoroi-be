@@ -16,6 +16,11 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    
+    positions = params[:event][:positions]
+    @event.location_jp = Geocoder.search(positions, language: :jp).first.data['display_name']
+    @event.location_en = Geocoder.search(positions, language: :en).first.data['display_name']
+    
     @event.save!
     params[:event][:picture_ids].each do |qquuid|
       EventPicture.find_by(qquuid: qquuid).update(event_id: @event.id)
