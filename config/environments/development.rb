@@ -26,24 +26,15 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries    = true
   config.action_mailer.default_options       = { from: "#{ Settings.company.omoroi.name } <#{ Settings.mailer.gmail_username }>" }
   config.action_mailer.delivery_method       = :smtp
-
-  ActionMailer::Base.smtp_settings = {
-    :address              => Settings.mailer.gmail_smtp,
-    :port                 => Settings.mailer.gmail_port,
-    :user_name            => ENV['GMAIL_USERNAME'],
-    :password             => ENV['GMAIL_PASSWORD'],
-    :authentication       => :plain,
-    :enable_starttls_auto => true
-  }
   
-  # config.action_mailer.raise_delivery_errors = false
-  # config.action_mailer.perform_caching       = false
-  # config.action_mailer.default_url_options   = { host: Settings.development.api_host }
-  # config.action_mailer.delivery_method       = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   address: Settings.development.smtp_host,
-  #   port:    Settings.development.smtp_port
-  # }
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.perform_caching       = false
+  config.action_mailer.default_url_options   = { host: Settings.development.api_host }
+  config.action_mailer.delivery_method       = :smtp
+  config.action_mailer.smtp_settings = {
+    address: Settings.development.smtp_host,
+    port:    Settings.development.smtp_port
+  }
 
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
