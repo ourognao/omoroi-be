@@ -18,7 +18,7 @@ development:
   smtp_port: 1025
 
 mailer:
-  gmail_smtp: 'smtp.gmail.com'
-  gmail_port: '587'
-  gmail_domain: 'gmail.com'
+  gmail_smtp: smtp.gmail.com
+  gmail_port: 587
+  gmail_domain: gmail.com
   gmail_no_reply: 'no-reply@omoroilife.com'
