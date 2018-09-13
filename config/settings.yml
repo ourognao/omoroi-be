@@ -4,8 +4,8 @@ company:
   ip_address: 126.74.201.30
 
 production:
-  app_host:  omoroi-fe.herokuapp.com
-  api_host:  omoroi-be.herokuapp.com
+  app_host: omoroi-fe.herokuapp.com
+  api_host: omoroi-be.herokuapp.com
 
 staging:
   app_host:  omoroi-fe-staging.herokuapp.com
@@ -21,4 +21,4 @@ mailer:
   gmail_smtp: smtp.gmail.com
   gmail_port: 587
   gmail_domain: gmail.com
-  gmail_no_reply: 'no-reply@omoroilife.com'
+  gmail_no_reply: no-reply@omoroilife.com
