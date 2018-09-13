@@ -18,8 +18,6 @@ development:
   smtp_port: 1025
 
 mailer:
-  gmail_username: 'info@omoroilife.com'
-  gmail_password: 'omoroi2015'
   gmail_smtp: 'smtp.gmail.com'
   gmail_port: '587'
   gmail_domain: 'gmail.com'
