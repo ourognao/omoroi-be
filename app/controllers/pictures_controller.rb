@@ -17,6 +17,13 @@ class PicturesController < ApplicationController
     end
   end
 
+  def update
+    if params[:picture_type].to_sym == :event
+      EventPicture.where(qquuid: params[:qquuids]).update_all(event_id: params[:event_id])
+      @pictures = EventPicture.where(event_id: params[:event_id])
+    end
+  end
+
   def delete
     @picture = EventPicture.find_by(qquuid: params[:qquuid]).destroy
   end
