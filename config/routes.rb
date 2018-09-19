@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   namespace :pictures, defaults: { format: :json } do
     get  'show'
+    put  'update'
     post 'upload'
     post 'delete'
   end
