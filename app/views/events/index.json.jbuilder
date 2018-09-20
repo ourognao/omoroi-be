@@ -11,4 +11,6 @@ json.data do
   json.users @users do |user|
     json.partial! 'users/user', user: user
   end
+  
+  json.totalPages @totalPages
 end
