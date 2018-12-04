@@ -2,11 +2,12 @@ class EventsController < ApplicationController
   before_action :set_event,   only: [:update, :destroy]
   
   def index
-      if params[:screen] == 'top'
-        get_top_screen_events 
-        return
-      end
-      get_event_screen_events
+    @staff = User.staff
+    if params[:screen] == 'top'
+      get_top_screen_events 
+      return
+    end
+    get_event_screen_events
   end
   
   def show
@@ -69,8 +70,7 @@ class EventsController < ApplicationController
     startMonth  = Date.parse(changeDateFormat(params[:bom]))
     endMonth    = Date.parse(changeDateFormat(params[:eom])).end_of_month
     currentDay  = Time.current.strftime('%Y-%m-%d')
-    
-    @users      = User.all
+
     @events     = Event.where('date BETWEEN ? AND ?', startMonth, endMonth).sortedByAsc
     @events    += Event.where('date < ?', currentDay).sortedByDesc.first(25)
   end

@@ -58,6 +58,8 @@ class User < ActiveRecord::Base
     inactive: 2,
   }, default: :active
 
+  scope :staff,  -> { all.where('kind != ?', 4) }
+
   def debug
     client_id = 'DEBUG'
     token     = 'DEBUG'
