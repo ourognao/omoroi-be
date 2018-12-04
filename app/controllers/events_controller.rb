@@ -72,7 +72,7 @@ class EventsController < ApplicationController
     
     @users      = User.all
     @events     = Event.where('date BETWEEN ? AND ?', startMonth, endMonth).sortedByAsc
-    @events    += Event.where('date < ?', currentDay).sortedByDesc.first(3)
+    @events    += Event.where('date < ?', currentDay).sortedByDesc.first(25)
   end
 
   def get_event_screen_events
