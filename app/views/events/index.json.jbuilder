@@ -8,8 +8,8 @@ json.data do
     json.thumbnail event.event_pictures[0].thumbnail
   end
 
-  json.users @users do |user|
-    json.partial! 'users/user', user: user
+  json.staff @staff do |staff|
+    json.partial! 'events/staff', staff: staff
   end
   
   json.totalPages @totalPages
