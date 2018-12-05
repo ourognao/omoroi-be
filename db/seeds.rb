@@ -62,8 +62,10 @@ def createEvents(maxEvents, isFuturEvents)
   for i in 0..maxEvents
     sectionItems = ['SC', 'LX', 'SP']
     section = sectionItems.sample
-    sportTagsItems = ['volleyball', 'basketball', 'pingpong', 'futsal', 'badminton', 'kickboxing', 'tennis', 'other']
-    tag = section == 'SP' ? sportTagsItems.sample : nil
+    sportTagsItemsJp = ['バレーボール', 'バスケットボール', '卓球', 'フットサル', 'バドミントン', 'キックボクシング', 'テニス', 'その他']
+    sportTagsItemsEn = ['volleyball', 'basketball', 'pingpong', 'futsal', 'badminton', 'kickboxing', 'tennis', 'other']
+    tagJp = section == 'SP' ? sportTagsItemsJp.sample : nil
+    tagEn = section == 'SP' ? sportTagsItemsEn.sample : nil
     locationItemsJP = ['スポーツセンター', '体操クラブ']
     locationItemsEn = ['Sports Center', 'Gymnastic Club']
     townItemsJP = ['三島郡', '豊能町', '泉北郡', '泉南市', '吹田市', '堺市', '高槻市', '池田市', '貝塚市']
@@ -104,16 +106,20 @@ def createEvents(maxEvents, isFuturEvents)
     
     case section
       when 'SC'
-        titleBySection = "Social Event #{i}"
+        titleBySectionJp = "社交的イベント #{i}"
+        titleBySectionEn = "Social Event #{i}"
       when 'LX'
-        titleBySection = "Language Event #{i}"
+        titleBySectionJp = "ランゲージイベント #{i}"
+        titleBySectionEn = "Language Event #{i}"
       when 'SP'
-        titleBySection = "#{tag} Tournament"
+        titleBySectionJp = "#{tagJp} 大会"
+        titleBySectionEn = "#{tagEn} Tournament"
     end
 
     title = [{
       section: section,
-      title: titleBySection
+      titleJp: titleBySectionJp,
+      titleEn: titleBySectionEn
     }]
 
     Event.create(
@@ -126,7 +132,7 @@ def createEvents(maxEvents, isFuturEvents)
       capacity: rand(15..30),
       threshold: rand(5..10),
       section: [section],
-      tags: [tag],
+      tags: [tagEn],
       positions: positionItems[0][townEn.to_sym],
       access_jp: " #{townJP}#{stationItemsJP.sample}または#{stationItemsJP.sample}から徒歩#{rand(1..4)}-#{rand(5..10)}分",
       access_en: "#{rand(1..4)}-#{rand(5..10)}min walk from #{townEn}. #{stationItemsEN.sample} or #{stationItemsEN.sample} Station",
