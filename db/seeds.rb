@@ -124,6 +124,8 @@ def createEvents(maxEvents, isFuturEvents)
 
     Event.create(
       title: title.to_json,
+      event_location_name_jp: "#{townJP} #{locationItemsJP.sample}",
+      event_location_name_en: "#{townEn} #{locationItemsEn.sample}",
       location_jp: "#{townJP} #{locationItemsJP.sample}",
       location_en: "#{townEn} #{locationItemsEn.sample}",
       date: date.strftime('%Y-%m-%d'),
