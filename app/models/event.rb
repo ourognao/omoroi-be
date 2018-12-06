@@ -2,26 +2,28 @@
 #
 # Table name: events
 #
-#  id             :bigint(8)        not null, primary key
-#  user_id        :integer          not null
-#  title          :text
-#  location_jp    :string
-#  access_jp      :string
-#  date           :date
-#  start_time     :string
-#  end_time       :string
-#  cost           :integer
-#  capacity       :integer
-#  threshold      :integer
-#  explanation_jp :text
-#  positions      :string           is an Array
-#  tags           :string           is an Array
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  section        :string           is an Array
-#  explanation_en :text
-#  location_en    :string
-#  access_en      :string
+#  id                     :bigint(8)        not null, primary key
+#  user_id                :integer          not null
+#  title                  :text
+#  location_jp            :string
+#  access_jp              :string
+#  date                   :date
+#  start_time             :string
+#  end_time               :string
+#  cost                   :integer
+#  capacity               :integer
+#  threshold              :integer
+#  explanation_jp         :text
+#  positions              :string           is an Array
+#  tags                   :string           is an Array
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  section                :string           is an Array
+#  explanation_en         :text
+#  location_en            :string
+#  access_en              :string
+#  event_location_name_jp :string
+#  event_location_name_en :string
 #
 # Indexes
 #

@@ -44,6 +44,8 @@ class EventsController < ApplicationController
       :user_id,
       :title,
       :date,
+      :event_location_name_jp,
+      :event_location_name_en,
       :location_jp,
       :location_en,
       :access_jp,
