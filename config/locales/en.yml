@@ -1,4 +1,11 @@
 en:
+  activerecord:
+    errors:
+      models:
+        event:
+          attributes:
+            picture_ids:
+              required: Picture is required.
   devise_token_auth:
     sessions:
       inactive: Your account has been inactivated.

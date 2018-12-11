@@ -1,4 +1,12 @@
 ja:
+  activerecord:
+    errors:
+      models:
+        event:
+          attributes:
+            picture_ids:
+              required: 写真は必須項目です
+        special_homestay:
   devise_token_auth:
     sessions:
       inactive: アカウントが無効化されています。
