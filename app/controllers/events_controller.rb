@@ -24,7 +24,14 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     set_geo_localization
+
+    if !params[:event][:picture_ids].present?
+      @event.errors.add(:picture_ids, :required)
+      return
+    end
+
     @event.save!
+    
     params[:event][:picture_ids].each do |qquuid|
       EventPicture.find_by(qquuid: qquuid).update(event_id: @event.id)
     end
