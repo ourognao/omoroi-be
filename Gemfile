@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
-ruby '2.4.1'
 
 # Ensure https is used in Bundler (workaround for a bug in Bundler to avoid man in the middle attacks)
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+
+ruby '2.5.3'
 
 # Mailcatcher - Catches mail and serves it through a dream (https://github.com/sj26/mailcatcher/)
 
