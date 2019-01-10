@@ -22,4 +22,4 @@ mailer:
   gmail_smtp: smtp.gmail.com
   gmail_port: 587
   gmail_domain: gmail.com
-  gmail_no_reply: no-reply@omoroilife.com
+  gmail_no_reply: no-reply@omoroi-life.com
