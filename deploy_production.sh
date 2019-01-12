@@ -10,11 +10,11 @@ git pull origin master
 echo "########## GIT STATUS ##########"
 git status
 
-echo "########## FIGARO PUSH ENV VARS TO PHOENIX (BACKEND - PRODUCTION) ##########"
+echo "########## FIGARO PUSH ENV VARS TO OMOROI (BACKEND - PRODUCTION) ##########"
 figaro heroku:set -e production --app omoroi-be
 
-#echo "########## HEROKU PUSH BRANCH TO PHOENIX (BACKEND - PRODUCTION) ##########"
-git push omoroi-be master
+echo "########## HEROKU PUSH BRANCH TO OMOROI (BACKEND - PRODUCTION) ##########"
+git push production master
 
 echo "########## DESTROY MERGED BRANCH ##########"
 git branch -D $merged_branch
