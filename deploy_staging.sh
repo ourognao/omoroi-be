@@ -14,12 +14,12 @@ git add -A .
 git commit -m $current_branch
 git push origin $current_branch
 
-# echo "########## FIGARO PUSH ENV VARS TO PHOENIX (BACKEND - STAGING) ##########"
-# figaro heroku:set -e staging --app pms4-api-staging
+echo "########## FIGARO PUSH ENV VARS TO OMOROI (BACKEND - STAGING) ##########"
+figaro heroku:set -e staging --app omoroi-be-staging
 
-# #echo "########## HEROKU PUSH BRANCH TO PHOENIX (BACKEND - STAGING) ##########"
-# #git push pms4-api-staging "$current_branch":master
+echo "########## HEROKU PUSH BRANCH TO OMOROI (BACKEND - STAGING) ##########"
+git push staging "$current_branch":master
 
-# echo "CURRENT_BRANCH: $current_branch"
+echo "CURRENT_BRANCH: $current_branch"
 
 echo "##########【成功】ステージングデプロイスクリプトが完了しました ##########"
