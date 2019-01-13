@@ -20,8 +20,7 @@ module Utils
       if Rails.env.production?
         request_post(channel[:url], payload)
       else
-        # puts payload
-        request_post(channel[:url], payload)
+        puts payload
       end
     end
 
