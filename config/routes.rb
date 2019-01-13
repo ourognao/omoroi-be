@@ -13,4 +13,8 @@ Rails.application.routes.draw do
     post 'upload'
     post 'delete'
   end
+
+  namespace :utils, defaults: { format: :json } do
+    post 'release_email'
+  end
 end
