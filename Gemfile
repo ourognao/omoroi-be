@@ -70,6 +70,8 @@ gem 'devise_token_auth'
 # OmniAuth is a flexible authentication system utilizing Rack middleware. (https://github.com/omniauth/omniauth)
 gem 'omniauth'
 
+gem 'omniauth-oauth2'
+
 #Facebook OAuth2 Strategy for OmniAuth (https://github.com/mkdynamic/omniauth-facebook)
 gem 'omniauth-facebook', '5.0.0'
 
