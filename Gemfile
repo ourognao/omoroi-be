@@ -70,6 +70,9 @@ gem 'devise_token_auth'
 # OmniAuth is a flexible authentication system utilizing Rack middleware. (https://github.com/omniauth/omniauth)
 gem 'omniauth'
 
+#Facebook OAuth2 Strategy for OmniAuth (https://github.com/mkdynamic/omniauth-facebook)
+gem 'omniauth-facebook', '5.0.0'
+
 group :development do
   # The Listen gem listens to file modifications and notifies you about the changes. (https://github.com/guard/listen)
   gem 'listen', '>= 3.0.5', '< 3.2'
