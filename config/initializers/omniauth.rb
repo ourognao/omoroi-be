@@ -1,7 +1,7 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   # provider :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], scope: 'email', info_fields: 'email,name'
   provider :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], {
-  	strategy_class: OmniAuth::Strategies::Facebook,
+  	#strategy_class: OmniAuth::Strategies::Facebook,
   	scope: 'email',
   	info_fields: 'email,name',
   	callback_path: '/auth/facebook/callback',
