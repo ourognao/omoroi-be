@@ -1,7 +1,5 @@
-class ApplicationController < ActionController::Base
+class ApplicationController < ActionController::API
   include DeviseTokenAuth::Concerns::SetUserByToken
-  protect_from_forgery except: :callback
-  
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
 
