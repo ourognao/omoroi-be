@@ -1,14 +1,7 @@
-class ApplicationController < ActionController::Base
+class ApplicationController < ActionController::API
   include DeviseTokenAuth::Concerns::SetUserByToken
-  protect_from_forgery
   before_action :set_locale
-  before_action :skip_session
-  # before_action :configure_permitted_parameters, if: :devise_controller?
-
-  protected
-    def skip_session
-      request.session_options[:skip] = true
-    end
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
 
