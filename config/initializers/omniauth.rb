@@ -5,7 +5,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   	scope: 'email',
   	info_fields: 'email,name',
   	callback_url: 'https://omoroi-fe-staging.herokuapp.com/auth/facebook/callback/',
-  	callback_path: '/auth/facebook/callback',
+  	callback_path: 'https://omoroi-fe-staging.herokuapp.com/auth/facebook/callback/',
   	# callback_path: 'https://omoroi-fe-staging.herokuapp.com/auth/facebook/callback',
   	# callback_path: '/auth/facebook/callback',
   	# http://www.mysite.com/users/auth/facebook/callback
