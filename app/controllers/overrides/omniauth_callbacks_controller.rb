@@ -8,7 +8,7 @@ module Overrides
     protected
 
     def get_resource_from_auth_hash
-	  Rails.logger.info "BAGO :: {auth_hash['uid']}"
+	  Rails.logger.info "BAGO :: #{auth_hash['uid']}, auth_hash['provider']"
 	end
   end
 end
