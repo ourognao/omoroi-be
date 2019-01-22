@@ -3,13 +3,13 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], {
   	#strategy_class: OmniAuth::Strategies::Facebook,
   	scope: 'email',
-  	info_fields: 'email,name',
-  	callback_url: 'https://omoroi-fe-staging.herokuapp.com/auth/facebook/callback',
+  	info_fields: 'email,name'
+  	# callback_url: 'https://omoroi-fe-staging.herokuapp.com/auth/facebook/callback',
   	#callback_path: 'https://omoroi-fe-staging.herokuapp.com/auth/facebook/callback/',
   	# callback_path: 'https://omoroi-fe-staging.herokuapp.com/auth/facebook/callback',
   	# callback_path: '/auth/facebook/callback',
   	# http://www.mysite.com/users/auth/facebook/callback
-  	provider_ignores_state: true
+  	# provider_ignores_state: true
   	#token_params: { parse: :json }
   	# client_options: {
    #    site: 'https://graph.facebook.com/v3.1',
