@@ -38,7 +38,7 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable,
-          :confirmable, :omniauthable
+          :confirmable, :omniauthable, omniauth_providers: [:facebook]
   
   include DeviseTokenAuth::Concerns::User
   extend Enumerize
