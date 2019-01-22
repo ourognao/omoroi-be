@@ -8,7 +8,7 @@ module Overrides
     protected
 
     def get_resource_from_auth_hash
-	  Rails.logger.info "BAGO :: #{request.env['omniauth.auth']['credentials']}"
+	  Rails.logger.info "BAGO :: #{request.env}"
 	end
   end
 end
