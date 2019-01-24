@@ -22,12 +22,12 @@ module OmoroiBe
 
     config.eager_load_paths += Dir["#{config.root}/lib/**/"]
 
-    config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore
-
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*'
+        origins Settings.development.app_host,
+                Settings.development.mobile_host,
+                Settings.staging.app_host,
+                Settings.production.app_host
         resource '*',
           headers: :any,
           expose:  ['access-token', 'expiry', 'token-type', 'uid', 'client'],
