@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     sessions: 'overrides/sessions'
   }
 
-  resources :users,         only: [:index, :show,   :update, :destroy],           defaults: { format: :json }
+  resources :users,         only: [:index, :show,   :update],           defaults: { format: :json }
   resources :events,        only: [:index, :create, :show, :update, :destroy],    defaults: { format: :json }
   resources :reservations,  only: [:index, :create, :update, :destroy],           defaults: { format: :json }
   

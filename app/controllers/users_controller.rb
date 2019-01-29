@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :update]
+
   def index
     if params[:q].present?
       @users = User.for_query(params[:q], params[:page] || 1)
@@ -9,10 +11,29 @@ class UsersController < ApplicationController
   
   def show
   end
+
+  def create
+    @user = User.new(user_params)
+    @user.confirmed_at = Time.current
+    @user.save
+  end
   
   def update
+    @user.update(user_params)
   end
 
-  def destroy
+  private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(
+      :provider,
+      :name,
+      :email,
+      :password
+    )
   end
 end
