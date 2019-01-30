@@ -13,20 +13,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    if params[:user][:provider]
-      @user = User.find_or_initialize_by(email: params[:user][:email])
-      if @user.id.nil?
-        @user = User.new(user_params)
-        @user.save
-      else
-        @user.errors.add(:email, :alread_exist)
-      end
-      return
+    @user = User.find_or_initialize_by(email: params[:user][:email])
+    if @user.id.nil? || !params[:user][:provider].present?
+      save_user
+    else
+      @user.errors.add(:email, :alread_exist)
     end
-    
-    @user = User.new(user_params)
-    @user.confirmed_at = Time.current
-    @user.save!
   end
   
   def update
@@ -35,6 +27,12 @@ class UsersController < ApplicationController
 
   private
 
+  def save_user
+    @user = User.new(user_params)
+    @user.confirmed_at = Time.current
+    @user.save!
+  end
+  
   def set_user
     @user = User.find(params[:id])
   end
