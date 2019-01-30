@@ -13,8 +13,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    if params[:provider]
-      @user = User.find_or_initialize_by(email: params[:email])
+    if params[:user][:provider]
+      @user = User.find_or_initialize_by(email: params[:user][:email])
       if @user.id.nil?
         @user = User.new(user_params)
         @user.save
