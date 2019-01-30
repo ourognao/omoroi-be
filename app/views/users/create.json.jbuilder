@@ -1,7 +1,6 @@
 if @user.errors.present?
   json.status :error
   json.errors @user.errors
-
 else
   json.status :success
   json.data do

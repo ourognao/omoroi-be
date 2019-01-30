@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.confirmed_at = Time.current
-    @user.save
+    @user.save!
   end
   
   def update
