@@ -13,6 +13,17 @@ class UsersController < ApplicationController
   end
 
   def create
+    if params[:provider]
+      @user = User.find_or_initialize_by(email: params[:email])
+      if @user.id.nil?
+        @user = User.new(user_params)
+        @user.save
+      else
+        @user.errors.add(:email, :alread_exist)
+      end
+      return
+    end
+    
     @user = User.new(user_params)
     @user.confirmed_at = Time.current
     @user.save!

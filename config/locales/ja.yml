@@ -2,10 +2,14 @@ ja:
   activerecord:
     errors:
       models:
+        user:
+          attributes:
+            email:
+              alread_exist: 登録メールアドレスはすでに存在します。
         event:
           attributes:
             picture_ids:
-              required: 写真は必須項目です
+              required: 写真は必須項目です。
         special_homestay:
   devise_token_auth:
     sessions:

@@ -2,6 +2,10 @@ en:
   activerecord:
     errors:
       models:
+        user:
+          attributes:
+            email:
+              alread_exist: Email already exists.
         event:
           attributes:
             picture_ids:
