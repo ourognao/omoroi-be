@@ -21,6 +21,10 @@ class UsersController < ApplicationController
     @user.update(user_params)
   end
 
+  def invalid_omniauth_session
+    User.find_by(email: params[:email]).update(uprovider: nil)
+  end
+
   private
 
   def save_user
