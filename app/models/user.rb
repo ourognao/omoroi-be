@@ -27,6 +27,7 @@
 #  updated_at             :datetime         not null
 #  line                   :string
 #  uprovider              :string           default("email")
+#  facebook_id            :string           default("nil")
 #
 # Indexes
 #

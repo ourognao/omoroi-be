@@ -15,6 +15,14 @@ class UsersController < ApplicationController
   def create
     @user = User.find_or_initialize_by(email: params[:user][:email])
     @user.id.nil? ? save_user : @user.errors.add(:email, :already_exist)
+
+    if @user.id.nil?
+      save_user
+    elsif @user.uprovider.nil? && @user.facebook_id == params[:user][:facebook_id]
+      @user.update(uprovider: params[:user][:uprovider])
+    else
+      @user.errors.add(:email, :already_exist)
+    end
   end
   
   def update
@@ -40,6 +48,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
       :uprovider,
+      :facebook_id,
       :name,
       :email,
       :password
