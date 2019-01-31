@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.find_or_initialize_by(email: params[:user][:email])
-    @user.id.nil? ? save_user : @user.errors.add(:email, :alread_exist)
+    @user.id.nil? ? save_user : @user.errors.add(:email, :already_exist)
   end
   
   def update
@@ -36,7 +36,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
       :provider,
-      #:uid,
       :name,
       :email,
       :password

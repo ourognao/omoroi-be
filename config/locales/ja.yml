@@ -5,7 +5,7 @@ ja:
         user:
           attributes:
             email:
-              alread_exist: 登録メールアドレスはすでに存在します。
+              already_exist: 登録メールアドレスはすでに存在します。
         event:
           attributes:
             picture_ids:

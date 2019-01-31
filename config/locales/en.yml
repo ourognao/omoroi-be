@@ -5,7 +5,7 @@ en:
         user:
           attributes:
             email:
-              alread_exist: Email already exists.
+              already_exist: Email already exists.
         event:
           attributes:
             picture_ids:
