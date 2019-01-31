@@ -14,11 +14,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.find_or_initialize_by(email: params[:user][:email])
-    if @user.id.nil? || !params[:user][:provider].present?
-      save_user
-    else
-      @user.errors.add(:email, :alread_exist)
-    end
+    @user.id.nil? ? save_user : @user.errors.add(:email, :alread_exist)
   end
   
   def update
