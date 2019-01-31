@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
     if @user.id.nil?
       save_user
+      return
     elsif @user.uprovider.nil? && @user.facebook_id == params[:user][:facebook_id]
       @user.update(uprovider: params[:user][:uprovider])
     else
