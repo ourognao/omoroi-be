@@ -1,5 +1,6 @@
 json.(user,
   :id,
+  :provider,
   :name,
   :email,
   :kind,

@@ -26,6 +26,8 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  line                   :string
+#  uprovider              :string           default("email")
+#  facebook_id            :string           default("nil")
 #
 # Indexes
 #
@@ -36,12 +38,12 @@
 #
 
 class User < ActiveRecord::Base
+  include DeviseTokenAuth::Concerns::User
+  extend Enumerize
+
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable,
           :confirmable, :omniauthable
-  
-  include DeviseTokenAuth::Concerns::User
-  extend Enumerize
 
   has_many :events
   has_many :reservations

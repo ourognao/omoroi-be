@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'auth', controllers: {
     sessions: 'overrides/sessions'
   }
-
-  resources :users,         only: [:index, :show,   :update, :destroy],           defaults: { format: :json }
+  
   resources :events,        only: [:index, :create, :show, :update, :destroy],    defaults: { format: :json }
   resources :reservations,  only: [:index, :create, :update, :destroy],           defaults: { format: :json }
+  resources :users,         only: [:index, :show, :create, :update],              defaults: { format: :json } do
+    get :invalid_omniauth_session, on: :collection
+  end
   
   namespace :pictures, defaults: { format: :json } do
     get  'show'
