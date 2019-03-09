@@ -33,7 +33,7 @@ Rails.application.configure do
   ##############################
   ##### Mail settings
   ##############################
-  config.action_mailer.default_url_options   = { host: "https://#{Settings.production.api_host}" }
+  config.action_mailer.default_url_options   = { host: "https://#{Settings.staging.api_host}" }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries    = true
   config.action_mailer.default_options       = { from: "#{ Settings.company.omoroi.name } <#{ ENV['GMAIL_USERNAME'] }>" }
