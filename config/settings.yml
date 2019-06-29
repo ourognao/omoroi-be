@@ -4,7 +4,7 @@ company:
   ip_address: 126.74.201.30
 
 production:
-  app_host: omoroi-life.com
+  app_host: www.omoroi-life.com
   api_host: omoroi-be.herokuapp.com
 
 staging:
