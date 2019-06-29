@@ -33,7 +33,9 @@ class EventsController < ApplicationController
     @event.save!
     
     params[:event][:picture_ids].each do |qquuid|
-      EventPicture.find_by(qquuid: qquuid).update(event_id: @event.id)
+      eventPicture = EventPicture.find_by(qquuid: qquuid)
+      next if eventPicture.event_id.present?
+      eventPicture.update(event_id: @event.id)
     end
   end
 

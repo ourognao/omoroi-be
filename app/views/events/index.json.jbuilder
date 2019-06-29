@@ -5,7 +5,7 @@ json.data do
     json.reservations event.reservations do |reservation|
       json.partial! 'reservations/reservation', reservation: reservation
     end
-    json.thumbnail event.event_pictures[0].thumbnail
+    json.thumbnail event.event_pictures[0]&.thumbnail
   end
 
   json.staff @staff do |staff|
