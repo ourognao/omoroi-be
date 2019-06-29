@@ -68,7 +68,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise_token_auth'
 
 # OmniAuth is a flexible authentication system utilizing Rack middleware. (https://github.com/omniauth/omniauth)
-gem 'omniauth'
+gem 'omniauth', '~> 1.9.0'
 
 group :development do
   # The Listen gem listens to file modifications and notifies you about the changes. (https://github.com/guard/listen)
