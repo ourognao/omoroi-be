@@ -10,6 +10,9 @@ ruby '2.5.3'
 
 # Mailcatcher - Catches mail and serves it through a dream (https://github.com/sj26/mailcatcher/)
 
+# Rails CSRF Protection mitigation against CVE-2015-9284 (https://github.com/cookpad/omniauth-rails_csrf_protection)
+gem 'omniauth-rails_csrf_protection'
+
 # Complete Ruby geocoding solution (https://github.com/alexreisner/geocoder)
 gem 'geocoder'
 
@@ -63,6 +66,8 @@ gem 'rack-cors', require: 'rack/cors'
 
 # Ruby Timezone Library (https://github.com/tzinfo/tzinfo)
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'devise'
 
 # Token based authentication for Rails JSON APIs. Designed to work with jToker and ng-token-auth. (https://github.com/lynndylanhurley/devise_token_auth)
 gem 'devise_token_auth'
