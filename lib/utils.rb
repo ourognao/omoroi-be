@@ -2,7 +2,7 @@ module Utils
 
   RELEASE_EMAILS_CHANNEL = {
     name: '#release-emails',
-    url: 'https://hooks.slack.com/services/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'
+    url: ENV['SLACK_WEBHOOK_TOKEN']
   }
 
   class << self
@@ -11,7 +11,7 @@ module Utils
       channel = self.const_get("#{to}_CHANNEL".upcase)
       payload = {
         channel:    channel[:name],
-        username:   'PMS4',
+        username:   'Omoroi',
         text:       CGI.escape(message),
         mrkdwn:     true,
         link_names: 1
