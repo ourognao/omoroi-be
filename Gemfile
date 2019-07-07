@@ -67,8 +67,6 @@ gem 'rack-cors', require: 'rack/cors'
 # Ruby Timezone Library (https://github.com/tzinfo/tzinfo)
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'devise'
-
 # Token based authentication for Rails JSON APIs. Designed to work with jToker and ng-token-auth. (https://github.com/lynndylanhurley/devise_token_auth)
 gem 'devise_token_auth'
 
