@@ -53,7 +53,7 @@ gem 'rails', '~> 5.1.1'
 gem 'pg'
 
 # A ruby web server built for concurrency (https://github.com/puma/puma)
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 4.3'
 
 # Jbuilder: generate JSON objects with a Builder-style DSL (https://github.com/rails/jbuilder)
 gem 'jbuilder', '~> 2.5'
